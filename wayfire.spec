@@ -53,6 +53,7 @@ Suggests:	kanshi
 Suggests:	mako
 Suggests:	swayidle
 Suggests:	swaylock
+Suggests:	wcm
 Suggests:	wf-shell
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
