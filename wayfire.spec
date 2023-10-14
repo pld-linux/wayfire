@@ -5,7 +5,7 @@
 Summary:	A modular and extensible wayland compositor
 Name:		wayfire
 Version:	0.8.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/WayfireWM/wayfire/releases/download/v%{version}/%{name}-%{version}.tar.xz
@@ -72,6 +72,7 @@ Wayfire libraries
 Summary:	Header files for wayfire
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
+Requires:	GLM >= 0.9.9.9
 Requires:	cairo-devel
 Requires:	libstdc++-devel >= 6:9
 Requires:	pango-devel
