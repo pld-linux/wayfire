@@ -10,6 +10,7 @@ License:	MIT
 Group:		Applications
 Source0:	https://github.com/WayfireWM/wayfire/releases/download/v%{version}/%{name}-%{version}.tar.xz
 # Source0-md5:	36e88c89c0be0e6af725ecab15049ecb
+Patch0:		no-git-check.patch
 URL:		https://wayfire.org/
 BuildRequires:	EGL-devel
 BuildRequires:	GLM >= 0.9.9.9
@@ -94,6 +95,7 @@ Static wayfire libraries.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %meson build \
