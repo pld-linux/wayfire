@@ -13,7 +13,7 @@ Source0:	https://github.com/WayfireWM/wayfire/releases/download/v%{version}/%{na
 Patch0:		no-git-check.patch
 URL:		https://wayfire.org/
 BuildRequires:	EGL-devel
-BuildRequires:	GLM >= 0.9.9.9
+BuildRequires:	GLM-devel >= 0.9.9.9
 BuildRequires:	OpenGLESv2-devel
 BuildRequires:	cairo-devel
 BuildRequires:	cmake
@@ -73,7 +73,7 @@ Wayfire libraries
 Summary:	Header files for wayfire
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	GLM >= 0.9.9.9
+Requires:	GLM-devel >= 0.9.9.9
 Requires:	cairo-devel
 Requires:	libstdc++-devel >= 6:9
 Requires:	pango-devel
