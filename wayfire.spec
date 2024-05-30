@@ -3,11 +3,13 @@
 %bcond_without	static_libs	# static library
 
 Summary:	A modular and extensible wayland compositor
+Summary(pl.UTF-8):	Modularny i rozszerzalny kompozytor Wayland
 Name:		wayfire
 Version:	0.8.0
 Release:	2
 License:	MIT
 Group:		Applications
+#Source0Download: https://github.com/WayfireWM/wayfire/releases
 Source0:	https://github.com/WayfireWM/wayfire/releases/download/v%{version}/%{name}-%{version}.tar.xz
 # Source0-md5:	36e88c89c0be0e6af725ecab15049ecb
 Patch0:		no-git-check.patch
@@ -62,15 +64,25 @@ Wayfire is a 3D Wayland compositor, inspired by Compiz and based on
 wlroots. It aims to create a customizable, extendable and lightweight
 environment without sacrificing its appearance.
 
+%description -l pl.UTF-8
+Wayfire to trójwymiarowy kompozytor Wayland, zainspirowany Compizem i
+oparty na wlroots. Celem jest utworzenie rozszerzalnego, lekkiego
+środowiska bez poświęcania wyglądu.
+
 %package libs
 Summary:	Wayfire libraries
+Summary(pl.UTF-8):	Biblioteki Wayfire
 Group:		Libraries
 
 %description libs
-Wayfire libraries
+Wayfire libraries.
+
+%description libs -l pl.UTF-8
+Biblioteki Wayfire.
 
 %package devel
 Summary:	Header files for wayfire
+Summary(pl.UTF-8):	Pliki nagłówkowe wayfire
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	GLM-devel >= 0.9.9.9
@@ -87,13 +99,20 @@ Requires:	wlroots-devel >= 0.16.0
 %description devel
 Header files for wayfire.
 
+%description devel -l pl.UTF-8
+Pliki nagłówkowe wayfire.
+
 %package static
 Summary:	Static wayfire libraries
+Summary(pl.UTF-8):	Biblioteki statyczne wayfire
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static wayfire libraries.
+
+%description static -l pl.UTF-8
+Biblioteki statyczne wayfire.
 
 %prep
 %setup -q
@@ -107,7 +126,6 @@ Static wayfire libraries.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{_datadir}/wayfire/icons
 
 %ninja_install -C build
