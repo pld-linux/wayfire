@@ -6,7 +6,7 @@ Summary:	A modular and extensible wayland compositor
 Summary(pl.UTF-8):	Modularny i rozszerzalny kompozytor Wayland
 Name:		wayfire
 Version:	0.8.0
-Release:	2
+Release:	3
 License:	MIT
 Group:		Applications
 #Source0Download: https://github.com/WayfireWM/wayfire/releases
