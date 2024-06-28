@@ -1,0 +1,26 @@
+--- wayfire-0.8.0/meson.build.orig	2024-06-28 23:37:15.218293323 +0200
++++ wayfire-0.8.0/meson.build	2024-06-29 00:00:36.554167930 +0200
+@@ -25,7 +25,10 @@
+ drm            = dependency('libdrm')
+ egl            = dependency('egl')
+ glesv2         = dependency('glesv2')
++glm = dependency('glm', modules: ['glm::glm-header-only'], required: false)
++if not glm.found()
+ glm            = dependency('glm')
++endif
+ libinput       = dependency('libinput', version: '>=1.7.0')
+ pixman         = dependency('pixman-1')
+ threads        = dependency('threads')
+--- wayfire-0.8.0/subprojects/wf-touch/meson.build.orig	2021-03-19 15:56:39.000000000 +0100
++++ wayfire-0.8.0/subprojects/wf-touch/meson.build	2024-06-29 00:16:24.536784735 +0200
+@@ -3,7 +3,10 @@
+ 		    meson_version: '>=0.47.0',
+ 		    default_options : ['cpp_std=c++17'])
+ 
++glm = dependency('glm', modules: ['glm::glm-header-only'], required: false)
++if not glm.found()
+ glm = dependency('glm')
++endif
+ 
+ wf_touch_inc_dirs = include_directories('.')
+ install_headers([

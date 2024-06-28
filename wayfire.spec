@@ -13,6 +13,7 @@ Group:		Applications
 Source0:	https://github.com/WayfireWM/wayfire/releases/download/v%{version}/%{name}-%{version}.tar.xz
 # Source0-md5:	36e88c89c0be0e6af725ecab15049ecb
 Patch0:		no-git-check.patch
+Patch1:		glm.patch
 URL:		https://wayfire.org/
 BuildRequires:	EGL-devel
 BuildRequires:	GLM-devel >= 0.9.9.9
@@ -117,6 +118,7 @@ Biblioteki statyczne wayfire.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %meson build \
