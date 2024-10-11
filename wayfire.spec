@@ -5,13 +5,13 @@
 Summary:	A modular and extensible wayland compositor
 Summary(pl.UTF-8):	Modularny i rozszerzalny kompozytor Wayland
 Name:		wayfire
-Version:	0.8.1
+Version:	0.9.0
 Release:	1
 License:	MIT
 Group:		Applications
 #Source0Download: https://github.com/WayfireWM/wayfire/releases
 Source0:	https://github.com/WayfireWM/wayfire/releases/download/v%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	ec2652b11a5a8d03f96a38e8ca426246
+# Source0-md5:	94b7f9f03de7913c8b29ef251301f9cc
 Patch0:		glm.patch
 URL:		https://wayfire.org/
 BuildRequires:	EGL-devel
@@ -21,6 +21,7 @@ BuildRequires:	cairo-devel
 BuildRequires:	cmake
 BuildRequires:	libdrm-devel
 BuildRequires:	libevdev-devel
+BuildRequires:	libgomp-devel
 BuildRequires:	libinput-devel >= 1.7.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
@@ -28,7 +29,7 @@ BuildRequires:	libstdc++-devel >= 6:9
 BuildRequires:	libxcb-devel
 BuildRequires:	meson >= 0.63.0
 BuildRequires:	ninja
-BuildRequires:	nlohmann-json-devel
+BuildRequires:	nlohmann-json-devel >= 3.11.2
 BuildRequires:	pango-devel
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig
@@ -36,16 +37,16 @@ BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	wayland-devel
 BuildRequires:	wayland-protocols >= 1.12
-BuildRequires:	wf-config-devel < 0.9.0
-BuildRequires:	wf-config-devel >= 0.8.0
+BuildRequires:	wf-config-devel < 0.10.0
+BuildRequires:	wf-config-devel >= 0.9.0
 BuildRequires:	wlroots-devel < 0.18.0
 BuildRequires:	wlroots-devel >= 0.17.0
 BuildRequires:	xorg-lib-libxkbcommon-devel
 BuildRequires:	xz
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	libinput >= 1.7.0
-Requires:	wf-config < 0.9.0
-Requires:	wf-config >= 0.8.0
+Requires:	wf-config < 0.10.0
+Requires:	wf-config >= 0.9.0
 Requires:	wlroots < 0.18.0
 Requires:	wlroots >= 0.17.0
 Suggests:	alacritty
@@ -91,8 +92,8 @@ Requires:	libstdc++-devel >= 6:9
 Requires:	pango-devel
 Requires:	pixman-devel
 Requires:	wayland-devel
-Requires:	wf-config-devel < 0.9.0
-Requires:	wf-config-devel >= 0.8.0
+Requires:	wf-config-devel < 0.10.0
+Requires:	wf-config-devel >= 0.9.0
 Requires:	wlroots-devel < 0.18.0
 Requires:	wlroots-devel >= 0.17.0
 
