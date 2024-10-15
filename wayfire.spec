@@ -25,7 +25,7 @@ BuildRequires:	libgomp-devel
 BuildRequires:	libinput-devel >= 1.7.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	libstdc++-devel >= 6:9
+BuildRequires:	libstdc++-devel >= 6:12
 BuildRequires:	libxcb-devel
 BuildRequires:	meson >= 0.63.0
 BuildRequires:	ninja
@@ -88,7 +88,7 @@ Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	GLM-devel >= 0.9.9.9
 Requires:	cairo-devel
-Requires:	libstdc++-devel >= 6:9
+Requires:	libstdc++-devel >= 6:12
 Requires:	pango-devel
 Requires:	pixman-devel
 Requires:	wayland-devel
