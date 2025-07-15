@@ -120,16 +120,16 @@ Biblioteki statyczne wayfire.
 %patch -P0 -p1
 
 %build
-%meson build \
+%meson \
 	%{!?with_static_libs:--default-library=shared}
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/wayfire/icons
 
-%ninja_install -C build
+%meson_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
