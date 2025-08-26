@@ -33,7 +33,7 @@ BuildRequires:	nlohmann-json-devel >= 3.11.2
 BuildRequires:	pango-devel
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	wayland-devel
 BuildRequires:	wayland-protocols >= 1.12
