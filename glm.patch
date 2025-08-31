@@ -1,9 +1,9 @@
 --- wayfire-0.8.0/meson.build.orig	2024-06-28 23:37:15.218293323 +0200
 +++ wayfire-0.8.0/meson.build	2024-06-29 00:00:36.554167930 +0200
 @@ -25,7 +25,10 @@
- drm            = dependency('libdrm')
  egl            = dependency('egl')
  glesv2         = dependency('glesv2')
+ vulkan         = dependency('vulkan', required: false)
 +glm = dependency('glm', modules: ['glm::glm-header-only'], required: false)
 +if not glm.found()
  glm            = dependency('glm', required: false)

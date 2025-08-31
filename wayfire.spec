@@ -5,50 +5,52 @@
 Summary:	A modular and extensible wayland compositor
 Summary(pl.UTF-8):	Modularny i rozszerzalny kompozytor Wayland
 Name:		wayfire
-Version:	0.9.0
+Version:	0.10.0
 Release:	1
 License:	MIT
 Group:		Applications
 #Source0Download: https://github.com/WayfireWM/wayfire/releases
 Source0:	https://github.com/WayfireWM/wayfire/releases/download/v%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	94b7f9f03de7913c8b29ef251301f9cc
+# Source0-md5:	4a5f02e27cc4e00da22865a78ef2e0f8
 Patch0:		glm.patch
 URL:		https://wayfire.org/
 BuildRequires:	EGL-devel
 BuildRequires:	GLM-devel >= 0.9.9.9
 BuildRequires:	OpenGLESv2-devel
+BuildRequires:	Vulkan-Loader-devel
 BuildRequires:	cairo-devel
 BuildRequires:	cmake
 BuildRequires:	libdrm-devel
 BuildRequires:	libevdev-devel
 BuildRequires:	libgomp-devel
-BuildRequires:	libinput-devel >= 1.7.0
+BuildRequires:	libinput-devel >= 1.27.0
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libstdc++-devel >= 6:12
 BuildRequires:	libxcb-devel
-BuildRequires:	meson >= 0.63.0
+BuildRequires:	meson >= 0.64.0
 BuildRequires:	ninja
-BuildRequires:	nlohmann-json-devel >= 3.11.2
 BuildRequires:	pango-devel
 BuildRequires:	pixman-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	udev-devel
 BuildRequires:	wayland-devel
 BuildRequires:	wayland-protocols >= 1.12
-BuildRequires:	wf-config-devel < 0.10.0
-BuildRequires:	wf-config-devel >= 0.9.0
-BuildRequires:	wlroots-devel < 0.18.0
-BuildRequires:	wlroots-devel >= 0.17.0
+BuildRequires:	wf-config-devel < 0.11.0
+BuildRequires:	wf-config-devel >= 0.10.0
+BuildRequires:	wlroots0.19-devel <= 0.19.99
+BuildRequires:	wlroots0.19-devel >= 0.19.0
 BuildRequires:	xorg-lib-libxkbcommon-devel
 BuildRequires:	xz
+BuildRequires:	yyjson-devel
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	libinput >= 1.7.0
-Requires:	wf-config < 0.10.0
-Requires:	wf-config >= 0.9.0
-Requires:	wlroots < 0.18.0
-Requires:	wlroots >= 0.17.0
+Requires:	libinput >= 1.27.0
+Requires:	wf-config < 0.11.0
+Requires:	wf-config >= 0.10.0
+Requires:	wlroots0.19 <= 0.19.99
+Requires:	wlroots0.19 >= 0.19.0
 Suggests:	alacritty
 Suggests:	alsa-utils
 Suggests:	grim
@@ -92,10 +94,10 @@ Requires:	libstdc++-devel >= 6:12
 Requires:	pango-devel
 Requires:	pixman-devel
 Requires:	wayland-devel
-Requires:	wf-config-devel < 0.10.0
-Requires:	wf-config-devel >= 0.9.0
-Requires:	wlroots-devel < 0.18.0
-Requires:	wlroots-devel >= 0.17.0
+Requires:	wf-config-devel < 0.11.0
+Requires:	wf-config-devel >= 0.10.0
+Requires:	wlroots0.19-devel <= 0.19.99
+Requires:	wlroots0.19-devel >= 0.19.0
 
 %description devel
 Header files for wayfire.
@@ -148,6 +150,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/wayfire/icons
 %{_datadir}/wayfire/metadata
 %{_datadir}/wayland-sessions/wayfire.desktop
+%{_datadir}/xdg-desktop-portal/wayfire-portals.conf
 %{_mandir}/man1/wayfire.1*
 
 %files libs
@@ -166,6 +169,8 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
+%{_libdir}/libwayfire-move-drag-interface.a
+%{_libdir}/libwayfire-workspace-wall.a
 %{_libdir}/libwf-utils.a
 %{_libdir}/libwftouch.a
 %endif
